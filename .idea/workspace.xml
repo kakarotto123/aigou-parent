@@ -1,64 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c70d6282-b2be-4b2a-af84-8eb24d0e7d6a" name="Default Changelist" comment="" />
+    <list default="true" id="77a72841-950a-40c3-b8f0-a6ad9cc78a25" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
+  <component name="MavenImportPreferences">
+    <option name="enabledProfiles">
       <list>
-        <option value="Class" />
+        <option value="jdk-1.8" />
       </list>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-        <option name="userSettingsFile" value="D:\eclipse\workspace\apache-maven-3.3.9\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1Rv65lJPSeiRbNraOwTnmfRuvXo" />
+  <component name="ProjectId" id="1S0A1qCjfIPEupMyNhhYZV9FTpi" />
   <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/aigou-plat-parent/plat-interface/src/main/java/cn/itsource/aigou/domain" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IDEA\aigou-parent\aigou-plat-parent\plat-interface\src\main\java\cn\itsource\aigou\domain" />
-      <recent name="D:\IDEA\aigou-parent\aigou-zuul\src\main\java\cn\itsource\aigou\config" />
-      <recent name="D:\IDEA\aigou-parent\aigou-zuul\src\main\java\cn\itsource\aigou" />
-      <recent name="D:\IDEA\aigou-parent\aigou-plat-parent\plat-service\src\main\java\cn\itsource\aigou\config" />
-      <recent name="D:\IDEA\aigou-parent\aigou-plat-parent\plat-service\src\main\java\cn\itsource\aigou" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEA\aigou-parent\aigou-eureka\src\main\java\cn\itsource\aigou" />
-    </key>
   </component>
   <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
     <option name="ruleStates">
       <list>
         <RuleState>
@@ -70,28 +33,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PlatApplication">
-    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.ZuulApplication">
+    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="aigou-eureka" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.itsource.aigou.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.itsource.aigou.EurekaApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlatApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="PlatApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="plat-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.itsource.aigou.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.itsource.aigou.PlatApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,47 +55,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.PlatApplication" />
-        <item itemvalue="Spring Boot.EurekaApplication" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <option name="contentProportion" value="0.15778689" />
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3d14c1ca" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3d14c1ca" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@153df2b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c70d6282-b2be-4b2a-af84-8eb24d0e7d6a" name="Default Changelist" comment="" />
-      <created>1570535041252</created>
+      <changelist id="77a72841-950a-40c3-b8f0-a6ad9cc78a25" name="Default Changelist" comment="" />
+      <created>1570689926505</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1570535041252</updated>
-      <workItem from="1570535044804" duration="1701000" />
-      <workItem from="1570536764269" duration="881000" />
-      <workItem from="1570607073209" duration="1463000" />
+      <updated>1570689926505</updated>
+      <workItem from="1570689927848" duration="296000" />
     </task>
     <servers />
   </component>
