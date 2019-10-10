@@ -7,10 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="plat-interface" />
-        <module name="plat-service" />
-        <module name="aigou-eureka" />
-        <module name="basic-util" />
         <module name="aigou-zuul" />
+        <module name="plat-service" />
+        <module name="aigou-config-server" />
+        <module name="basic-util" />
+        <module name="aigou-eureka" />
       </profile>
     </annotationProcessing>
   </component>
