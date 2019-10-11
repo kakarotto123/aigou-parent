@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77a72841-950a-40c3-b8f0-a6ad9cc78a25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/aigou-config-server/aigou-config-server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-config-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-config-server/src/main/java/cn/itsource/aigou/ConfigServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-config-server/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-plat-parent/plat-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-zuul/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-zuul/src/main/java/cn/itsource/aigou/config/GlobalCorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-plat-parent/plat-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-plat-parent/plat-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-plat-parent/plat-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-plat-parent/plat-service/src/main/resources/application_back.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-plat-parent/plat-service/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-zuul/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-zuul/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-zuul/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-zuul/src/main/resources/application_back.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-zuul/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aigou-plat-parent/plat-interface/src/main/java/cn/itsource/aigou/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-plat-parent/plat-interface/src/main/java/cn/itsource/aigou/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aigou-plat-parent/plat-service/src/main/java/cn/itsource/aigou/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-plat-parent/plat-service/src/main/java/cn/itsource/aigou/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aigou-plat-parent/plat-service/target/classes/cn/itsource/aigou/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-plat-parent/plat-service/target/classes/cn/itsource/aigou/controller/LoginController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +49,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="D:/Git/bin/git.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -84,7 +76,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
+  <component name="RunManager" selected="Spring Boot.ZuulApplication">
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="aigou-config-server" />
       <extension name="coverage">
@@ -132,17 +124,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@dc1f8760" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f29a85ae" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@dc1f8760" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5696f016" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@dc1f8760" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f167fda3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f29a85ae" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@dc862e27" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -161,8 +148,20 @@
       <option name="presentableId" value="Default" />
       <updated>1570689926505</updated>
       <workItem from="1570689927848" duration="296000" />
-      <workItem from="1570690649833" duration="6372000" />
+      <workItem from="1570690649833" duration="6823000" />
+      <workItem from="1570697587273" duration="15000" />
+      <workItem from="1570798074198" duration="5891000" />
+      <workItem from="1570808213601" duration="22000" />
+      <workItem from="1570809093781" duration="1591000" />
     </task>
+    <task id="LOCAL-00001" summary="配置中心">
+      <created>1570697059128</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570697059128</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,10 +172,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="配置中心" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置中心" />
   </component>
 </project>

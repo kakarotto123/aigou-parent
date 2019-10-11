@@ -23,8 +23,11 @@ public class LoginController {
     @ApiOperation(value = "登录接口")
     @PostMapping("/login")
     public AjaxResult login(@RequestBody User user){
-        if ("admin".equals(user.getName()) && "admin".equals(user.getPassword())){
-            return AjaxResult.me().setSuccess(true).setMessage("登陆成功");
+        System.out.println(user.getName()+" ....." +user.getPassword());
+        String name = "admin";
+        String password = "admin";
+        if (name.equals(user.getName()) && password.equals(user.getPassword())){
+            return AjaxResult.me().setSuccess(true).setMessage("登陆成功").setRestObj(user);
         }
         return AjaxResult.me().setSuccess(false).setMessage("登陆失败");
     }
