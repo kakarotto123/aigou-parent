@@ -87,4 +87,13 @@ public class ProductTypeController {
         IPage<ProductType> ipage = productTypeService.page(page);
         return new PageList<ProductType>(ipage.getTotal(),ipage.getRecords());
     }
+
+    /**
+     * 加载类型树
+     * @return
+     */
+    @RequestMapping(value = "/loadTypeTree",method = RequestMethod.GET)
+    public List<ProductType> loadTypeTree(){
+        return productTypeService.loadTypeTree();
+    }
 }

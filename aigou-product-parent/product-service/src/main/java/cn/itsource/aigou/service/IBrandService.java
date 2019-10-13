@@ -1,6 +1,8 @@
 package cn.itsource.aigou.service;
 
 import cn.itsource.aigou.domain.Brand;
+import cn.itsource.aigou.query.BrandQuery;
+import cn.itsource.aigou.util.PageList;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +15,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBrandService extends IService<Brand> {
 
+    /**
+     * 分页高级查询
+     * @param query
+     * @return
+     */
+    PageList<Brand> queryPage(BrandQuery query);
 }

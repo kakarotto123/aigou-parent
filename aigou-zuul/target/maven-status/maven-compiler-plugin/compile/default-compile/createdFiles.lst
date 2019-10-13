@@ -1,3 +1,4 @@
 cn\itsource\aigou\config\DocumentationConfig.class
+cn\itsource\aigou\config\GlobalCorsConfig.class
 cn\itsource\aigou\config\SwaggerConfig.class
 cn\itsource\aigou\ZuulApplication.class
