@@ -2,11 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77a72841-950a-40c3-b8f0-a6ad9cc78a25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/aigou-zuul/src/main/java/cn/itsource/aigou/config/GlobalCorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-basic/basic-generator/basic-generator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-basic/basic-generator/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-basic/basic-generator/src/main/java/cn/itsource/aigou/util/GeneratorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-basic/basic-generator/src/main/resources/generate-product.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-basic/basic-generator/src/main/resources/templates/controller.java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-basic/basic-generator/src/main/resources/templates/query.java.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-basic/basic-util/src/main/java/cn/itsource/aigou/query/BaseQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-product-parent/aigou-product-parent.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-product-parent/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-interface/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/java/cn/itsource/aigou/ProductApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/java/cn/itsource/aigou/config/Swagger2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-plat-parent/plat-interface/src/main/java/cn/itsource/aigou/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-plat-parent/plat-interface/src/main/java/cn/itsource/aigou/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-plat-parent/plat-service/src/main/java/cn/itsource/aigou/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-plat-parent/plat-service/src/main/java/cn/itsource/aigou/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-plat-parent/plat-service/target/classes/cn/itsource/aigou/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-plat-parent/plat-service/target/classes/cn/itsource/aigou/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aigou-basic/basic-util/src/main/java/cn/itsource/aigou/util/PageList.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-basic/basic-util/src/main/java/cn/itsource/aigou/util/PageList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aigou-basic/basic-util/target/classes/cn/itsource/aigou/util/PageList.class" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-basic/basic-util/target/classes/cn/itsource/aigou/util/PageList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aigou-basic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-basic/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aigou-zuul/src/main/java/cn/itsource/aigou/config/DocumentationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-zuul/src/main/java/cn/itsource/aigou/config/DocumentationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aigou-zuul/target/classes/cn/itsource/aigou/config/DocumentationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-zuul/target/classes/cn/itsource/aigou/config/DocumentationConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,15 +66,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/aigou-basic/basic-generator/src/main/java/cn/itsource/aigou/util" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA\aigou-parent\aigou-basic\basic-generator\src\main\resources\templates" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.itsource.aigou.config" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA\aigou-parent\aigou-basic\basic-generator\src\main\java\cn\itsource\aigou\util" />
+      <recent name="D:\IDEA\aigou-parent\aigou-basic\basic-generator\src\main\resources" />
       <recent name="D:\IDEA\aigou-parent\aigou-zuul\src\main" />
     </key>
   </component>
@@ -76,7 +103,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ZuulApplication">
+  <component name="RunManager" selected="Application.GeneratorTest">
+    <configuration name="GenerateTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.itsource.aigou.util.GenerateTest" />
+      <module name="basic-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.itsource.aigou.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneratorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.itsource.aigou.util.GeneratorTest" />
+      <module name="basic-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.itsource.aigou.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="aigou-config-server" />
       <extension name="coverage">
@@ -104,6 +157,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="product-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.itsource.aigou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.itsource.aigou.ProductApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ZuulApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="aigou-zuul" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.itsource.aigou.ZuulApplication" />
@@ -113,6 +179,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ProductApplication" />
+        <item itemvalue="Application.GeneratorTest" />
+        <item itemvalue="Application.GenerateTest" />
         <item itemvalue="Spring Boot.ConfigServerApplication" />
       </list>
     </recent_temporary>
@@ -121,17 +190,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f29a85ae" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f29a85ae" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@dc862e27" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -152,7 +211,10 @@
       <workItem from="1570697587273" duration="15000" />
       <workItem from="1570798074198" duration="5891000" />
       <workItem from="1570808213601" duration="22000" />
-      <workItem from="1570809093781" duration="1591000" />
+      <workItem from="1570809093781" duration="2004000" />
+      <workItem from="1570864477352" duration="10187000" />
+      <workItem from="1570891072314" duration="441000" />
+      <workItem from="1570891534246" duration="1013000" />
     </task>
     <task id="LOCAL-00001" summary="配置中心">
       <created>1570697059128</created>
@@ -161,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570697059128</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="登录代码">
+      <created>1570810723216</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570810723217</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +251,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="配置中心" />
-    <option name="LAST_COMMIT_MESSAGE" value="配置中心" />
+    <MESSAGE value="登录代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录代码" />
   </component>
 </project>
