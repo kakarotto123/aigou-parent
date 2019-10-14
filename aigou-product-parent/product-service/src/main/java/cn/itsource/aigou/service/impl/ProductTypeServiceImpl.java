@@ -1,12 +1,18 @@
 package cn.itsource.aigou.service.impl;
 
+import cn.itsource.aigou.client.RedisClient;
+import cn.itsource.aigou.client.StaticPageClient;
 import cn.itsource.aigou.domain.ProductType;
 import cn.itsource.aigou.mapper.ProductTypeMapper;
 import cn.itsource.aigou.service.IProductTypeService;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,16 +29,54 @@ import java.util.Map;
 @Service
 public class ProductTypeServiceImpl extends ServiceImpl<ProductTypeMapper, ProductType> implements IProductTypeService {
 
+    @Autowired
+    private RedisClient redisClient;
+
+    @Autowired
+    private StaticPageClient staticPageClient;
+
     /**
      * 加载类型树
      * @return
      */
     @Override
     public List<ProductType> loadTypeTree() {
+        //先查询Redis中的数据  java对象存储到redis中的方案-json字符串
+        String productTypesStr = redisClient.get("productTypes");
+        System.out.println("查询Redis...");
+        //判断redis中是否有数据
+        if(productTypesStr!=null){
 
-        //先查所有的一级类型
-//       List<ProductType> productTypes = loadTypeTreeRecursive(0L);
-        return loadTypeTreeLoop2();
+            //返回给前端 -- json字符串转java对象
+            List<ProductType> productTYpes = JSONArray.parseArray(productTypesStr,ProductType.class);//TODO 转java集合(productTypesStr);
+            return productTYpes;
+        }else{
+            //查询数据库
+            List<ProductType> productTypes = loadTypeTreeLoop2();
+            System.out.println("查询数据库..........");
+            //把数据缓存到redis中-json字符串
+            productTypesStr = JSON.toJSONString(productTypes);
+            redisClient.set("productTypes",productTypesStr);
+            //返回给前端
+            return productTypes;
+        }
+    }
+
+
+    @Override
+    public void genHomePage() {
+        //先根据product.type.vm模板生成product.type.vm.html
+        String templatePath = "D:\\IDEA\\aigou-parent\\aigou-product-parent\\product-service\\src\\main\\resources\\template\\product.type.vm";
+        String targetPath = "D:\\IDEA\\aigou-parent\\aigou-product-parent\\product-service\\src\\main\\resources\\template\\product.type.vm.html";
+        List<ProductType> productTypes = loadTypeTree();
+        staticPageClient.generateStaticPage(templatePath, targetPath, productTypes);
+
+        //再根据home.vm生成html.html
+        templatePath = "D:\\IDEA\\aigou-parent\\aigou-product-parent\\product-service\\src\\main\\resources\\template\\home.vm";
+        targetPath = "D:\\IDEA\\aigou-web-parent\\ecommerce\\home.html";
+        Map<String,Object> model = new HashMap<>();
+        model.put("staticRoot", "D:\\IDEA\\aigou-parent\\aigou-product-parent\\product-service\\src\\main\\resources\\");
+        staticPageClient.generateStaticPage(templatePath, targetPath, model);
     }
 
     /**
@@ -114,5 +158,43 @@ public class ProductTypeServiceImpl extends ServiceImpl<ProductTypeMapper, Produ
             }
         }
         return firstLevelTypes;
+    }
+
+    /**
+     * 重写增删改操作,同步redis
+     * @param entity
+     * @return
+     */
+    @Override
+    public boolean save(ProductType entity) {
+        boolean result = super.save(entity);
+        synchronizedOption();
+        return result;
+    }
+
+    @Override
+    public boolean removeById(Serializable id) {
+        boolean result = super.removeById(id);
+        synchronizedOption();
+        return result;
+    }
+
+    @Override
+    public boolean updateById(ProductType entity) {
+        boolean result = super.updateById(entity);
+        synchronizedOption();
+        return result;
+    }
+
+    /**
+     * 增删改的同步操作
+     */
+    private void synchronizedOption(){
+        //同步redis数据
+        List<ProductType> productTypes = loadTypeTreeLoop2();
+        String productTypesStr = JSON.toJSONString(productTypes);
+        redisClient.set("productTypes",productTypesStr);
+        //生成home.html静态页面
+        genHomePage();
     }
 }
