@@ -2,43 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77a72841-950a-40c3-b8f0-a6ad9cc78a25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-interface/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-interface/src/main/java/cn/itsource/aigou/client/RedisClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-interface/src/main/java/cn/itsource/aigou/client/StaticPageClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-interface/src/main/java/cn/itsource/aigou/client/impl/RedisClientImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/src/main/java/cn/itsource/aigou/CommonApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/src/main/java/cn/itsource/aigou/config/Swagger2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/src/main/java/cn/itsource/aigou/controller/RedisController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/src/main/java/cn/itsource/aigou/controller/StaticPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/src/main/java/cn/itsource/aigou/util/RedisUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/src/main/java/cn/itsource/aigou/util/VelocityUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-common-parent/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/resources/template/home.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/resources/template/home/common-footer.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/resources/template/home/common-header-top.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/resources/template/home/common-header.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/resources/template/home/common-link.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/resources/template/home/common-nav.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/resources/template/home/common-right-sidebar.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/resources/template/product.type.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/resources/template/product.type.vm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/test/java/cn/itsource/aigou/FastJsonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/test/java/cn/itsource/aigou/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/src/main/java/cn/itsource/aigou/controller/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/src/main/java/cn/itsource/aigou/util/FastDfsApiOpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/src/main/resources/fdfs_client.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-plat-parent/plat-service/src/main/java/cn/itsource/aigou/config/Swagger2.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-plat-parent/plat-service/src/main/java/cn/itsource/aigou/config/Swagger2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-plat-parent/plat-service/target/classes/cn/itsource/aigou/config/Swagger2.class" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-plat-parent/plat-service/target/classes/cn/itsource/aigou/config/Swagger2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-product-parent/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/java/cn/itsource/aigou/ProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/java/cn/itsource/aigou/ProductApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/java/cn/itsource/aigou/controller/ProductTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/java/cn/itsource/aigou/controller/ProductTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/java/cn/itsource/aigou/service/IProductTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/java/cn/itsource/aigou/service/IProductTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/java/cn/itsource/aigou/service/impl/ProductTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/java/cn/itsource/aigou/service/impl/ProductTypeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-zuul/src/main/java/cn/itsource/aigou/config/DocumentationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-zuul/src/main/java/cn/itsource/aigou/config/DocumentationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-zuul/target/classes/cn/itsource/aigou/config/DocumentationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-zuul/target/classes/cn/itsource/aigou/config/DocumentationConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aigou-common-parent/common-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-common-parent/common-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aigou-product-parent/product-service/src/test/java/cn/itsource/aigou/FastJsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-product-parent/product-service/src/test/java/cn/itsource/aigou/FastJsonTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +93,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/aigou-product-parent/product-service/src/main/resources/cn/itsource/aigou/mapper/template" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/aigou-common-parent/common-service/src/main/java/cn/itsource/aigou/util" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -136,23 +105,23 @@
       <recent name="cn.itsource.aigou.service.impl" />
       <recent name="cn.itsource.aigou.mapper" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEA\aigou-parent\aigou-product-parent\product-service\src\main\resources\template\home" />
-      <recent name="D:\IDEA\aigou-parent\aigou-product-parent\product-service\src\main\resources" />
-      <recent name="D:\IDEA\aigou-parent\aigou-basic\basic-generator\src\main\resources\templates" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.itsource.aigou.config" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IDEA\aigou-parent\aigou-product-parent\product-service\src\main\resources\cn\itsource\aigou\mapper\template" />
       <recent name="D:\IDEA\aigou-parent\aigou-common-parent\common-service\src\main\java\cn\itsource\aigou\util" />
+      <recent name="D:\IDEA\aigou-parent\aigou-product-parent\product-service\src\main\resources\cn\itsource\aigou\mapper\template" />
       <recent name="D:\IDEA\aigou-parent\aigou-common-parent\common-interface\src\main\java\cn\itsource\aigou" />
       <recent name="D:\IDEA\aigou-parent\aigou-common-parent\common-service\src\main\java\cn\itsource\aigou" />
       <recent name="D:\IDEA\aigou-parent\aigou-basic\basic-util\src\main\java\cn\itsource\aigou\util" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.itsource.aigou.config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA\aigou-parent\aigou-product-parent\product-service\src\main\resources\template\home" />
+      <recent name="D:\IDEA\aigou-parent\aigou-product-parent\product-service\src\main\resources" />
+      <recent name="D:\IDEA\aigou-parent\aigou-basic\basic-generator\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -267,10 +236,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.CommonApplication" />
         <item itemvalue="Spring Boot.ProductApplication" />
-        <item itemvalue="JUnit.FastJsonTest.test" />
+        <item itemvalue="Spring Boot.CommonApplication" />
         <item itemvalue="Spring Boot.ConfigServerApplication" />
+        <item itemvalue="JUnit.FastJsonTest.test" />
         <item itemvalue="JUnit.BrandMapperTest.queryPage" />
       </list>
     </recent_temporary>
@@ -278,17 +247,17 @@
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
-        <option name="contentProportion" value="0.1646175" />
+        <option name="contentProportion" value="0.17115252" />
         <treeState>
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@312627ef" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@45b4fee2" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@312627ef" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3b072431" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@45b4fee2" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@a19acc97" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -316,7 +285,9 @@
       <workItem from="1570891072314" duration="441000" />
       <workItem from="1570891534246" duration="1013000" />
       <workItem from="1570944401978" duration="16186000" />
-      <workItem from="1571040963343" duration="11136000" />
+      <workItem from="1571040963343" duration="12031000" />
+      <workItem from="1571133602445" duration="617000" />
+      <workItem from="1571188710940" duration="14024000" />
     </task>
     <task id="LOCAL-00001" summary="配置中心">
       <created>1570697059128</created>
@@ -353,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570984393285</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="提交商品类型的优化代码">
+      <created>1571056316211</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571056316211</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,6 +357,7 @@
     <MESSAGE value="crud后端代码提交" />
     <MESSAGE value="crud后端代码提交2" />
     <MESSAGE value="提交新增和编辑前端代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交新增和编辑前端代码" />
+    <MESSAGE value="提交商品类型的优化代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交商品类型的优化代码" />
   </component>
 </project>
