@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author kakarotto
- * @since 2019-10-12
+ * @since 2019-10-17
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -53,8 +53,7 @@ public class Product implements Serializable {
     /**
      * 商品类型ID
      */
-    @TableField("productType")
-    private Long productType;
+    private Long productTypeId;
 
     /**
      * 上架时间
@@ -68,7 +67,6 @@ public class Product implements Serializable {
     @TableField("offSaleTime")
     private Long offSaleTime;
 
-    @TableField("brandId")
     private Long brandId;
 
     /**
@@ -126,6 +124,20 @@ public class Product implements Serializable {
 
     @TableField("badCommentCount")
     private Integer badCommentCount;
+
+    @TableField("skuProperties")
+    private String skuProperties;
+
+    private String medias;
+
+    @TableField(exist = false)
+    private ProductExt ext;
+
+    @TableField(exist = false)
+    private Brand brand;
+
+    @TableField(exist = false)
+    private ProductType productType;
 
 
 }

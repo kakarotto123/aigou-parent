@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * @author 卡卡罗特
+ */
 public class GeneratorTest {
 
     public static void main(String[] args) {
@@ -26,6 +29,7 @@ public class GeneratorTest {
         gc.setAuthor(rb.getString("author"));
         gc.setOpen(false);
         gc.setBaseResultMap(true);
+        gc.setFileOverride(false);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
@@ -114,7 +118,7 @@ public class GeneratorTest {
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setEntityLombokModel(true);
         //生成哪些表的代码
-        strategy.setInclude("t_brand","t_product_type","t_product");
+        strategy.setInclude("t_sku","t_specification","t_product","t_product_ext","t_product_comment");
         strategy.setTablePrefix("t_");
         mpg.setStrategy(strategy);
         mpg.execute();

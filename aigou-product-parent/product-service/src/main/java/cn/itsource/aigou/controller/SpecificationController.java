@@ -1,12 +1,10 @@
 package cn.itsource.aigou.controller;
 
-import cn.itsource.aigou.service.IBrandService;
-import cn.itsource.aigou.service.IProductService;
-import cn.itsource.aigou.domain.Product;
-import cn.itsource.aigou.query.ProductQuery;
+import cn.itsource.aigou.service.ISpecificationService;
+import cn.itsource.aigou.domain.Specification;
+import cn.itsource.aigou.query.SpecificationQuery;
 import cn.itsource.aigou.util.AjaxResult;
 import cn.itsource.aigou.util.PageList;
-import cn.itsource.aigou.util.StrUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,24 +13,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/product")
-public class ProductController {
+@RequestMapping("/specification")
+public class SpecificationController {
 
     @Autowired
-    public IProductService productService;
+    public ISpecificationService specificationService;
 
     /**
     * 保存和修改公用的
-    * @param product  传递的实体
+    * @param specification  传递的实体
     * @return Ajaxresult转换结果
     */
     @RequestMapping(value="/add",method= RequestMethod.POST)
-    public AjaxResult save(@RequestBody Product product){
+    public AjaxResult save(@RequestBody Specification specification){
         try {
-            if(product.getId()!=null){
-                productService.updateById(product);
+            if(specification.getId()!=null){
+                specificationService.updateById(specification);
             }else{
-                productService.save(product);
+                specificationService.save(specification);
             }
             return AjaxResult.me();
         } catch (Exception e) {
@@ -49,7 +47,7 @@ public class ProductController {
     @RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
     public AjaxResult delete(@PathVariable("id") Integer id){
         try {
-            productService.removeById(id);
+            specificationService.removeById(id);
             return AjaxResult.me();
         } catch (Exception e) {
         e.printStackTrace();
@@ -57,28 +55,11 @@ public class ProductController {
         }
     }
 
-    /**
-     * 批量删除
-     * @param ids
-     * @return
-     */
-    @RequestMapping(value="/deleteBatch",method=RequestMethod.DELETE)
-    public AjaxResult delete(@RequestParam("ids") String ids){
-        try {
-            List<Long> idList = StrUtils.splitStr2LongArr(ids);
-            productService.removeByIds(idList);
-            return AjaxResult.me();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return AjaxResult.me().setMessage("删除对象失败！"+e.getMessage());
-        }
-    }
-
     //获取
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
-    public Product get(@PathVariable("id") Long id)
+    public Specification get(@PathVariable("id") Long id)
     {
-        return productService.getById(id);
+        return specificationService.getById(id);
     }
 
 
@@ -87,9 +68,9 @@ public class ProductController {
     * @return
     */
     @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public List<Product> list(){
+    public List<Specification> list(){
 
-        return productService.list(null);
+        return specificationService.list(null);
     }
 
 
@@ -100,8 +81,10 @@ public class ProductController {
     * @return PageList 分页对象
     */
     @RequestMapping(value = "/json",method = RequestMethod.POST)
-    public PageList<Product> json(@RequestBody ProductQuery query)
+    public PageList<Specification> json(@RequestBody SpecificationQuery query)
     {
-        return productService.queryPage(query);
+        Page<Specification> page = new Page<Specification>(query.getPage(),query.getRows());
+        IPage<Specification> ipage = specificationService.page(page);
+        return new PageList<Specification>(ipage.getTotal(),ipage.getRecords());
     }
 }

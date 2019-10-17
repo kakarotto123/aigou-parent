@@ -9,15 +9,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="plat-interface" />
         <module name="aigou-zuul" />
+        <module name="aigou-eureka" />
         <module name="plat-service" />
         <module name="common-interface" />
         <module name="basic-generator" />
         <module name="aigou-config-server" />
-        <module name="common-service" />
         <module name="product-service" />
         <module name="product-interface" />
         <module name="basic-util" />
-        <module name="aigou-eureka" />
+        <module name="common-service" />
       </profile>
     </annotationProcessing>
   </component>
