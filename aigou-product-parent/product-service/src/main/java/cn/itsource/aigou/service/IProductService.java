@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -42,4 +43,12 @@ public interface IProductService extends IService<Product> {
      * @return
      */
     List<Specification> getSkuProperties(Long productId);
+
+    /**
+     * 修改sku属性
+     * @param productId
+     * @param skuProperties
+     * @param skus
+     */
+    void saveSkuProperties(Long productId, List<Specification> skuProperties, List<Map<String, String>> skus);
 }

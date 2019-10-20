@@ -8,6 +8,7 @@ import cn.itsource.aigou.query.ProductQuery;
 import cn.itsource.aigou.util.AjaxResult;
 import cn.itsource.aigou.util.PageList;
 import cn.itsource.aigou.util.StrUtils;
+import cn.itsource.aigou.vo.SkusVo;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -143,5 +144,19 @@ public class ProductController {
     @GetMapping("/skuProperties/{productId}")
     public List<Specification> getSkuProperties(@PathVariable("productId") Long productId){
         return productService.getSkuProperties(productId);
+    }
+
+    /**
+     * 保存sku属性
+     * @param productId  商品编号
+     * @param skusVo   显示sku属性
+     * @return
+     */
+    @PostMapping("/updateSkuProperties")
+    public AjaxResult updateSkuProperties(@RequestParam("productId")Long productId,
+                                           @RequestBody SkusVo skusVo){
+            productService.saveSkuProperties(productId, skusVo.getSkuProperties(),skusVo.getSkus());
+            return AjaxResult.me().setSuccess(true).setMessage("保存成功");
+
     }
 }
