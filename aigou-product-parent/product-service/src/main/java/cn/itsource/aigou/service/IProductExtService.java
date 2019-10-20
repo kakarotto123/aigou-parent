@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IProductExtService extends IService<ProductExt> {
 
+    ProductExt findOne(Long productId);
 }

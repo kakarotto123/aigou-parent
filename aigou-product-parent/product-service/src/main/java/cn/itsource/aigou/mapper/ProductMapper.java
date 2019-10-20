@@ -28,4 +28,11 @@ public interface ProductMapper extends BaseMapper<Product> {
      * @return
      */
     IPage<Product> queryPage(Page page, @Param("query") ProductQuery query);
+
+    /**
+     * 修改显示属性 mapper接口中如果有多个参数需要在sql中获取作为参数需要绑定,使用@param注解
+     * @param productId
+     * @param viewProperties
+     */
+    void updateViewProperties(@Param("productId") Long productId,@Param("viewProperties") String viewProperties);
 }

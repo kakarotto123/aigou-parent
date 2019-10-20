@@ -1,12 +1,12 @@
 package cn.itsource.aigou.controller;
 
-import cn.itsource.aigou.service.IProductExtService;
 import cn.itsource.aigou.domain.ProductExt;
 import cn.itsource.aigou.query.ProductExtQuery;
+import cn.itsource.aigou.service.IProductExtService;
 import cn.itsource.aigou.util.AjaxResult;
 import cn.itsource.aigou.util.PageList;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -86,5 +86,15 @@ public class ProductExtController {
         Page<ProductExt> page = new Page<ProductExt>(query.getPage(),query.getRows());
         IPage<ProductExt> ipage = productExtService.page(page);
         return new PageList<ProductExt>(ipage.getTotal(),ipage.getRecords());
+    }
+
+    /**
+     * 通过商品ID查询
+     * @param productId
+     * @return
+     */
+    @RequestMapping(value = "/findOne",method = RequestMethod.GET)
+    public ProductExt findOne(Long productId){
+        return productExtService.findOne(productId);
     }
 }

@@ -4,6 +4,7 @@ import cn.itsource.aigou.domain.ProductExt;
 import cn.itsource.aigou.mapper.ProductExtMapper;
 import cn.itsource.aigou.service.IProductExtService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +18,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductExtServiceImpl extends ServiceImpl<ProductExtMapper, ProductExt> implements IProductExtService {
 
+    @Autowired
+    private ProductExtMapper productExtMapper;
+
+    @Override
+    public ProductExt findOne(Long productId) {
+        return productExtMapper.findOne(productId);
+    }
 }

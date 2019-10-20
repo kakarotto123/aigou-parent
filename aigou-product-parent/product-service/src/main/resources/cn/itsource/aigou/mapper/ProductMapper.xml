@@ -36,6 +36,9 @@
             <result column="brandname" property="name"/>
         </association>
     </resultMap>
+    <update id="updateViewProperties">
+        update t_product set viewProperties = #{viewProperties} where id=#{productId}
+    </update>
     <select id="queryPage" resultMap="BaseResultMap">
         select p.*,pt.name typename,b.name brandname
         from t_product p

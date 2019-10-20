@@ -9,5 +9,11 @@
         <result column="richContent" property="richContent" />
         <result column="productId" property="productId" />
     </resultMap>
+    <delete id="deleteByProId">
+         DELETE FROM t_product_ext WHERE productId = #{productId}
+    </delete>
+    <select id="findOne" resultType="cn.itsource.aigou.domain.ProductExt">
+        SELECT * FROM t_product_ext WHERE productId =  #{productId}
+    </select>
 
 </mapper>
