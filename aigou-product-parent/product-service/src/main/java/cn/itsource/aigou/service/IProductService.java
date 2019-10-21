@@ -51,4 +51,16 @@ public interface IProductService extends IService<Product> {
      * @param skus
      */
     void saveSkuProperties(Long productId, List<Specification> skuProperties, List<Map<String, String>> skus);
+
+    /**
+     * 批量上架
+     * @param ids
+     */
+    void onSale(List<Long> ids);
+
+    /**
+     * 批量下架
+     * @param ids
+     */
+    void offSale(List<Long> ids);
 }

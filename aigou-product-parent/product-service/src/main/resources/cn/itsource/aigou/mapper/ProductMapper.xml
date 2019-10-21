@@ -42,6 +42,18 @@
     <update id="saveSkuProperties">
         update t_product set skuProperties = #{skuProperties} where id=#{productId}
     </update>
+    <update id="onSale">
+        update t_product set onSaleTime = #{onSaleTime},state=1 where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+    <update id="offSale">
+        update t_product set offSaleTime = #{offSaleTime},state=0 where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
     <select id="queryPage" resultMap="BaseResultMap">
         select p.*,pt.name typename,b.name brandname
         from t_product p

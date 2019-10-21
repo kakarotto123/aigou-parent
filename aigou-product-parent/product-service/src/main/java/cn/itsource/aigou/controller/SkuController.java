@@ -87,4 +87,14 @@ public class SkuController {
         IPage<Sku> ipage = skuService.page(page);
         return new PageList<Sku>(ipage.getTotal(),ipage.getRecords());
     }
+
+    /**
+     * 查询价格
+     * @param productId
+     * @return
+     */
+    @GetMapping("/getPrices/{productId}")
+    public List<Sku> getPrices(@PathVariable Long productId){
+        return skuService.getPrices(productId);
+    }
 }

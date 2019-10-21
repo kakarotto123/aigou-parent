@@ -1,8 +1,11 @@
 package cn.itsource.aigou.mapper;
 
 import cn.itsource.aigou.domain.Sku;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * <p>

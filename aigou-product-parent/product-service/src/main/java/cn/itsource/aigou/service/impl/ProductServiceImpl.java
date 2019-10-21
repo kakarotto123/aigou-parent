@@ -1,15 +1,11 @@
 package cn.itsource.aigou.service.impl;
 
-import cn.itsource.aigou.domain.Product;
-import cn.itsource.aigou.domain.ProductExt;
-import cn.itsource.aigou.domain.Sku;
-import cn.itsource.aigou.domain.Specification;
-import cn.itsource.aigou.mapper.ProductExtMapper;
-import cn.itsource.aigou.mapper.ProductMapper;
-import cn.itsource.aigou.mapper.SkuMapper;
-import cn.itsource.aigou.mapper.SpecificationMapper;
+import cn.itsource.aigou.client.ProductESClient;
+import cn.itsource.aigou.domain.*;
+import cn.itsource.aigou.mapper.*;
 import cn.itsource.aigou.query.ProductQuery;
 import cn.itsource.aigou.service.IProductService;
+import cn.itsource.aigou.util.AjaxResult;
 import cn.itsource.aigou.util.PageList;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -26,6 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -48,6 +45,15 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
     @Autowired
     private SkuMapper skuMapper;
+
+    @Autowired
+    private ProductTypeMapper productTypeMapper;
+
+    @Autowired
+    private BrandMapper brandMapper;
+
+    @Autowired
+    private ProductESClient client;
 
     @Override
     public PageList<Product> queryPage(ProductQuery query) {
@@ -151,6 +157,100 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         }
 
     }
+
+    /**
+     *
+     * 批量上架
+     * @param idList
+     */
+    @Override
+    public void onSale(List<Long> idList) {
+        //修改数据的商品的state
+        baseMapper.onSale(idList,System.currentTimeMillis());
+        //查询商品信息
+        List<Product> products = baseMapper.selectBatchIds(idList);
+        //保存到es中
+        List<ProductDoc> productDocList = products2Docs(products);
+        client.saveBatch(productDocList);
+
+    }
+
+    /**
+     * 批量下架
+     * @param idList
+     */
+    @Override
+    public void offSale(List<Long> idList) {
+        //修改数据的商品的state
+        baseMapper.offSale(idList,System.currentTimeMillis());
+        //删除es中的数据
+        client.deleteBatch(idList);
+    }
+
+    /**
+     * 集合的转换
+     * @param products
+     * @return
+     */
+    private List<ProductDoc> products2Docs(List<Product> products){
+        ArrayList<ProductDoc> productDocList = new ArrayList<>();
+        ProductDoc doc = null;
+        for (Product product : products) {
+            doc = products2Doc(product);
+            productDocList.add(doc);
+        }
+        return productDocList;
+    }
+
+    /**
+     * 对象的转换
+     * @param product
+     * @return
+     */
+    private ProductDoc products2Doc(Product product){
+        ProductDoc doc = new ProductDoc();
+        ProductType productType = productTypeMapper.selectById(product.getProductTypeId());
+        Brand brand = brandMapper.selectById(product.getBrandId());
+        doc.setId(product.getId());
+        //all 标题 副标题 类型名称 品牌名称
+        StringBuilder all = new StringBuilder();
+        all.append(product.getName()).append(" ")
+                .append(product.getSubName()).append(" ")
+                .append(productType.getName()).append(" ")
+                .append(brand.getName());
+        doc.setAll(all.toString());
+        doc.setProductTypeId(product.getProductTypeId());
+        doc.setBrandId(product.getBrandId());
+        //最高价格  最低价格
+        List<Sku> skus = skuMapper.selectList(new QueryWrapper<Sku>().eq("product_id", product.getId()));
+        Integer maxPrice = 0;
+        Integer minPrice = 0;
+        //默认第一个价格为最低价格
+        if (skus!= null && skus.size()>0){
+            minPrice = skus.get(0).getPrice();
+        }
+        for (Sku sku : skus) {
+            if (sku.getPrice() > maxPrice){
+                maxPrice = sku.getPrice();
+            }
+            if (sku.getPrice() <minPrice){
+                minPrice = sku.getPrice();
+            }
+        }
+        doc.setMaxPrice(maxPrice);
+        doc.setMinPrice(minPrice);
+        doc.setSaleCount(product.getSaleCount());
+        doc.setOnSaleTime(product.getOnSaleTime());
+        doc.setCommentCount(product.getCommentCount());
+        doc.setViewCount(product.getViewCount());
+        doc.setName(product.getName());
+        doc.setSubName(product.getSubName());
+        doc.setMedias(product.getMedias());
+        doc.setViewProperties(product.getSkuProperties());
+        doc.setSkuProperties(product.getSkuProperties());
+        return doc;
+    }
+
 
     @Override
     @Transactional
