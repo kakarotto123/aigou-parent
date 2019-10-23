@@ -7,6 +7,8 @@ import cn.itsource.aigou.util.AjaxResult;
 import cn.itsource.aigou.util.LetterUtil;
 import cn.itsource.aigou.util.PageList;
 import cn.itsource.aigou.util.StrUtils;
+import cn.itsource.aigou.vo.BrandVo;
+import cn.itsource.aigou.vo.ProductTypeCrumbVo;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -103,5 +105,15 @@ public class BrandController {
             e.printStackTrace();
             return AjaxResult.me().setMessage("删除对象失败！"+e.getMessage());
         }
+    }
+
+    /**
+     * 根据类型编号查询品牌信息
+     * @param productTypeId
+     * @return
+     */
+    @GetMapping("/getByProductTypeId")
+    public BrandVo getByProductTypeId(@RequestParam("productTypeId") Long productTypeId){
+        return brandService.getByProductTypeId(productTypeId);
     }
 }

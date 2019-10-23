@@ -1,11 +1,11 @@
 package cn.itsource.aigou.service;
 
 import cn.itsource.aigou.domain.Product;
+import cn.itsource.aigou.domain.ProductParam;
 import cn.itsource.aigou.domain.Specification;
 import cn.itsource.aigou.query.ProductQuery;
 import cn.itsource.aigou.util.PageList;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
@@ -63,4 +63,11 @@ public interface IProductService extends IService<Product> {
      * @param ids
      */
     void offSale(List<Long> ids);
+
+    /**
+     * 在线商城搜索商品
+     * @param param
+     * @return
+     */
+    PageList<Product> queryOnSale(ProductParam param);
 }

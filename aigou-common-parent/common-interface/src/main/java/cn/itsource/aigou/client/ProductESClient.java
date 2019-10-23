@@ -1,6 +1,8 @@
 package cn.itsource.aigou.client;
 
 import cn.itsource.aigou.domain.ProductDoc;
+import cn.itsource.aigou.domain.ProductParam;
+import cn.itsource.aigou.util.PageList;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,4 +28,13 @@ public interface ProductESClient {
      */
     @PostMapping("/es/deleteBath")
     void deleteBatch(@RequestBody List<Long> ids);
+
+    /**
+     * es的搜索
+     * @param param
+     * @return
+     */
+    @PostMapping("/es/products")
+    public PageList<ProductDoc> search(@RequestBody ProductParam param);
+
 }

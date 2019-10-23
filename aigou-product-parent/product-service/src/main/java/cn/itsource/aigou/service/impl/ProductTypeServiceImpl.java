@@ -5,6 +5,7 @@ import cn.itsource.aigou.client.StaticPageClient;
 import cn.itsource.aigou.domain.ProductType;
 import cn.itsource.aigou.mapper.ProductTypeMapper;
 import cn.itsource.aigou.service.IProductTypeService;
+import cn.itsource.aigou.vo.ProductTypeCrumbVo;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -62,6 +63,42 @@ public class ProductTypeServiceImpl extends ServiceImpl<ProductTypeMapper, Produ
         }
     }
 
+    /**
+     * 加载类型面包屑
+     * @param productTypeId
+     * @return
+     */
+    @Override
+    public List<ProductTypeCrumbVo> loadTypeCrumb(Long productTypeId) {
+        //根据当前类型查询所有父级别的类型 path字段
+        ProductType currentType = baseMapper.selectById(productTypeId);
+        String path = currentType.getPath();
+        //分割path
+        List<Long> ids = pathSplit(path);
+        //查询各个级别的类型
+        List<ProductType> productTypes = baseMapper.selectBatchIds(ids);
+        List<ProductTypeCrumbVo> result = new ArrayList<>();
+        //封装数据
+        ProductTypeCrumbVo vo =null;
+        for (ProductType productType : productTypes) {
+            vo = new ProductTypeCrumbVo();
+            vo.setCurrentType(productType);
+            //其他同级别的类型
+            List<ProductType> otherTypes = baseMapper.selectList(new QueryWrapper<ProductType>().eq("pid", productType.getPid()));
+            vo.setOtherTypes(otherTypes);
+            result.add(vo);
+        }
+        return result;
+    }
+
+    public List<Long> pathSplit(String path){
+        String[] idArr = path.substring(1).split("\\.");
+        List<Long> idList = new ArrayList<>();
+        for (String idStr : idArr) {
+            idList.add(Long.parseLong(idStr));
+        }
+        return idList;
+    }
 
     @Override
     public void genHomePage() {

@@ -5,17 +5,13 @@ import cn.itsource.aigou.domain.*;
 import cn.itsource.aigou.mapper.*;
 import cn.itsource.aigou.query.ProductQuery;
 import cn.itsource.aigou.service.IProductService;
-import cn.itsource.aigou.util.AjaxResult;
 import cn.itsource.aigou.util.PageList;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import io.swagger.models.auth.In;
-import org.apache.tomcat.util.http.fileupload.util.LimitedInputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -185,6 +181,33 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         baseMapper.offSale(idList,System.currentTimeMillis());
         //删除es中的数据
         client.deleteBatch(idList);
+    }
+
+    /**
+     * 在线商城搜索商品
+     * @param param
+     * @return
+     */
+    @Override
+    public PageList<Product> queryOnSale(ProductParam param) {
+        //查询es中的数据
+        PageList<ProductDoc> pageList = client.search(param);
+        //封装成PageList
+        List<Product> list = new ArrayList<>();
+        Product p = null;
+        for (ProductDoc doc : pageList.getRows()) {
+            p = new Product();
+            p.setMedias(doc.getMedias());
+            p.setId(doc.getId());
+            p.setName(doc.getName());
+            p.setSubName(doc.getSubName());
+            p.setSaleCount(doc.getSaleCount());
+            p.setMaxPrice(doc.getMaxPrice());
+            p.setMinPrice(doc.getMinPrice());
+            list.add(p);
+        }
+        return new PageList<>(pageList.getTotal(),list);
+
     }
 
     /**
